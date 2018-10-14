@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<mapping map-id="CarDtoVsCar" wildcard="true">
+		<class-a>com.evolvice.rest.webservices.models.CarDto</class-a>
+		<class-b>com.evolvice.rest.webservices.dataaccess.model.Car</class-b>
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>brand</a>
+			<b>brand</b>
+		</field>
+		<field>
+			<a>model</a>
+			<b>model</b>
+		</field>
+		<field>
+			<a>color</a>
+			<b>color</b>
+		</field>
+		<field>
+			<a>price</a>
+			<b>price</b>
+		</field>
+		<field>
+			<a>yearOfProduction</a>
+			<b>yearOfProduction</b>
+		</field>
+	</mapping>
+
+</mappings>
