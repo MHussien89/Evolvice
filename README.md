@@ -30,7 +30,9 @@ and right click to choose "Run as java application"
 
 - To run the unit test:
 1) Go to /evolvice-web-services/src/test/java/com/evolvice/rest/webservices/evolvicewebservices/EvolviceWebServicesApplicationTests.java
-   and right click to choose "Run JUnit Test"
+   and right click to choose "Run JUnit Test"`
+2) Go to /evolvice-web-services/src/test/java/com/evolvice/rest/webservices/evolvicewebservices/EvolviceWebServicesIntegrationTests.java
+   and right click to choose "Run JUnit Test"`
 
 
 - Postman Collection and Swagger json file found in the documentation folder
