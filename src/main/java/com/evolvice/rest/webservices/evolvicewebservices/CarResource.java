@@ -1,9 +1,7 @@
 package com.evolvice.rest.webservices.evolvicewebservices;
 
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -19,16 +17,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.evolvice.rest.webservices.dataaccess.model.Car;
-import com.evolvice.rest.webservices.dataaccess.repository.CarRepository;
-import com.evolvice.rest.webservices.exceptions.CarNotFoundException;
-import com.evolvice.rest.webservices.models.CarDto;
+import com.evolvice.rest.webservices.dtos.CarDto;
+import com.evolvice.rest.webservices.services.CarService;
 
 @RestController
 public class CarResource {
 
 	@Autowired
-	CarRepository carRepository;
+	CarService carService;
 
 	@Autowired
 	DozerBeanMapper dozerBeanMapper;
@@ -37,42 +33,24 @@ public class CarResource {
 
 	@GetMapping("/cars")
 	public List<CarDto> retrieveAllCars() {
-		List<Car> savedCars = (List<Car>) carRepository.findAll();
-		List<CarDto> carsDtos = new ArrayList<CarDto>();
-		for (int i = 0; i < savedCars.size(); i++) {
-			CarDto carDto = dozerBeanMapper.map(savedCars.get(i), CarDto.class);
-			carsDtos.add(carDto);
-		}
-		return carsDtos;
+		return carService.getAllCars();
 	}
 
 	@GetMapping("/cars/{id}")
 	public CarDto retrieveCar(@PathVariable int id) {
-		Optional<Car> savedCar = carRepository.findById(id);
-		if (!savedCar.isPresent()) {
-
-			throw new CarNotFoundException("id-" + id);
-		}
-		CarDto carDto = dozerBeanMapper.map(savedCar.get(), CarDto.class);
-
-		return carDto;
+		return carService.getCar(id);
 	}
 
 	@DeleteMapping("/cars/{id}")
 	public void deleteCar(@PathVariable int id) {
-		Optional<Car> savedCar = carRepository.findById(id);
-		if (!savedCar.isPresent()) {
-			throw new CarNotFoundException("id-" + id);
-		}
-		carRepository.deleteById(id);
+		carService.deleteCar(id);
 	}
 
 	@PostMapping("/cars")
 	public ResponseEntity<Object> addCar(@Valid @RequestBody CarDto carDto) {
-		Car car = dozerBeanMapper.map(carDto, Car.class);
-		car = carRepository.save(car);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(car.getId())
-				.toUri();
+		CarDto savedCar = carService.addCar(carDto);
+		int carId = savedCar != null ? savedCar.getId() : 0;
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(carId).toUri();
 		return ResponseEntity.created(location).build();
 	}
 }

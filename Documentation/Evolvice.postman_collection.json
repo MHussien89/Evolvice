@@ -1,0 +1,199 @@
+{
+	"id": "164125a7-ed8e-d6d5-57b4-111f93ee5c20",
+	"name": "Evolvice",
+	"description": "",
+	"order": [
+		"fe40a795-7c0c-22b1-f30e-a29c977ff8f6",
+		"b7ecfd97-305c-8cb1-b813-3f797013adbe",
+		"946df3a9-3f38-41fd-733d-0b81cfd56e3d",
+		"babc3331-af04-d803-f8b5-5126d0cd0421"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1539647741529,
+	"owner": "2069857",
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "946df3a9-3f38-41fd-733d-0b81cfd56e3d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/cars/3",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "evolvice_2018"
+					},
+					{
+						"key": "username",
+						"value": "evolvice"
+					}
+				],
+				"type": "basic"
+			},
+			"time": 1539647934158,
+			"name": "Get CAR BY ID",
+			"description": "",
+			"collectionId": "164125a7-ed8e-d6d5-57b4-111f93ee5c20",
+			"responses": [],
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "evolvice",
+				"password": "evolvice_2018"
+			},
+			"rawModeData": "{\n\t\"brand\":\"KIA\",\n\t\"model\":\"RIO\",\n\t\"yearOfProduction\":\"2012-10-13T17:32:30.996+0000\",\n\t\"color\":\"yellow\",\n\t\"price\":111111\n}"
+		},
+		{
+			"id": "b7ecfd97-305c-8cb1-b813-3f797013adbe",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/cars",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "evolvice_2018"
+					},
+					{
+						"key": "username",
+						"value": "evolvice"
+					}
+				],
+				"type": "basic"
+			},
+			"time": 1539647890999,
+			"name": "Get All CARS",
+			"description": "",
+			"collectionId": "164125a7-ed8e-d6d5-57b4-111f93ee5c20",
+			"responses": [],
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "evolvice",
+				"password": "evolvice_2018"
+			},
+			"rawModeData": "{\n\t\"brand\":\"KIA\",\n\t\"model\":\"RIO\",\n\t\"yearOfProduction\":\"2012-10-13T17:32:30.996+0000\",\n\t\"color\":\"yellow\",\n\t\"price\":111111\n}"
+		},
+		{
+			"id": "babc3331-af04-d803-f8b5-5126d0cd0421",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/cars/2",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "evolvice_2018"
+					},
+					{
+						"key": "username",
+						"value": "evolvice"
+					}
+				],
+				"type": "basic"
+			},
+			"method": "DELETE",
+			"collectionId": "164125a7-ed8e-d6d5-57b4-111f93ee5c20",
+			"data": null,
+			"dataMode": "params",
+			"name": "Delete CAR",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1539647805968,
+			"version": 2,
+			"responses": [],
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "evolvice",
+				"password": "evolvice_2018"
+			}
+		},
+		{
+			"id": "fe40a795-7c0c-22b1-f30e-a29c977ff8f6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/cars",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "evolvice_2018"
+					},
+					{
+						"key": "username",
+						"value": "evolvice"
+					}
+				],
+				"type": "basic"
+			},
+			"method": "POST",
+			"collectionId": "164125a7-ed8e-d6d5-57b4-111f93ee5c20",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Add New CAR",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1539647767788,
+			"version": 2,
+			"responses": [],
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "evolvice",
+				"password": "evolvice_2018"
+			},
+			"rawModeData": "{\n\t\"brand\":\"KIA\",\n\t\"model\":\"RIO\",\n\t\"yearOfProduction\":\"2012-10-13T17:32:30.996+0000\",\n\t\"color\":\"yellow\",\n\t\"price\":111111\n}"
+		}
+	]
+}
