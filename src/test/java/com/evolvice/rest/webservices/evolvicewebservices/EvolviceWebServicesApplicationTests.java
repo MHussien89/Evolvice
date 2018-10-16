@@ -46,12 +46,6 @@ public class EvolviceWebServicesApplicationTests {
 	@Autowired
 	protected WebApplicationContext wac;
 
-	@Autowired
-	CarResource carResource;
-
-	@Autowired
-	CarRepository carRepository;
-
 	@MockBean
 	CarService carService;
 
@@ -64,13 +58,8 @@ public class EvolviceWebServicesApplicationTests {
 	 */
 	private List<CarDto> cars;
 
-	CarService mock;
-
 	@Before
 	public void setup() throws Exception {
-		// this.mockMvc = standaloneSetup(this.carResource).build();// Standalone
-		// context
-		mock = Mockito.mock(CarService.class);
 
 		mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 
