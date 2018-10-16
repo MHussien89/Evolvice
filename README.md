@@ -8,6 +8,7 @@ Evolvice REST APIs
 4) Swagger Documentation
 5) Actuator for Monitoring APIs
 6) Basic Authentication with Spring security
+7) Dozer Mapper
 
 
 - To run and test the APIs:
